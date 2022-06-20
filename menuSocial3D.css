@@ -1,0 +1,101 @@
+.menuSocial3D {
+    background-color: #434750;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5em 0 8em 0;
+}
+
+.menuSocial3D ul {
+    position: relative;
+    transform: skewY(-15deg);
+}
+
+.menuSocial3D ul li {
+    position: relative;
+    list-style: none;
+    width: 120px;background-color: #3e3f46;
+    padding: 15px;
+    z-index: calc(1 * var(--i));
+    transition: 0.5s;
+}
+
+.menuSocial3D ul li:hover {
+    transform: translateX(-50px);
+    background-color: var(--clr);
+}
+
+.menuSocial3D ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background-color: #3e3f46;
+    filter: brightness(0.7);
+    transform: skewY(45deg);
+    transform-origin: right;
+    transition: 0.5s;
+}
+
+.menuSocial3D ul li:hover::before {
+    background-color: var(--clr);
+    filter: brightness(0.7);
+}
+
+.menuSocial3D ul li::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #3e3f46;
+    filter: brightness(0.9);
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+}
+
+.menuSocial3D ul li:hover::after {
+    background-color: var(--clr);
+    filter: brightness(0.9);
+}
+
+.menuSocial3D ul li a {
+    text-decoration: none;
+    color: #999;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.menuSocial3D ul li:hover a {
+    color: #fff;
+}
+
+.menuSocial3D ul li:last-child::after {
+    box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+}
+
+.menuSocial3D ul li span {
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    transform: skewY(45deg);
+    transform-origin: right;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    font-size: 1.25em;
+}
+
+.menuSocial3D ul li:hover span {
+    opacity: 1;
+}
