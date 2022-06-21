@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     gap: 30px;
-    min-height: 20vh;
+    padding: 4em 0;
 }
 
 .card {
