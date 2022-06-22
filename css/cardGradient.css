@@ -1,0 +1,246 @@
+.cardGradient {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d061a;
+    padding: 4em 0 4em 0;
+}
+
+.cardGradient .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.cardGradient .container .box,
+.cardGradient .container .boxReverse
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 400px;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+
+.cardGradient .container .box::before,
+.cardGradient .container .boxReverse::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.cardGradient .container .box::before 
+{
+    transform: skewX(15deg);
+}
+.cardGradient .container .boxReverse::before {
+    transform: skewX(-15deg);
+}
+
+.cardGradient .container .box::after,
+.cardGradient .container .boxReverse::after 
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: 0.5s;
+    filter: blur(30px);
+}
+
+.cardGradient .container .box::after {
+    transform: skewX(15deg);
+}
+
+.cardGradient .container .boxReverse::after{
+    transform: skewX(-15deg);
+}
+
+.cardGradient .container .box:hover:before,
+.cardGradient .container .box:hover:after,
+.cardGradient .container .boxReverse:hover:before,
+.cardGradient .container .boxReverse:hover:after {
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+}
+
+.cardGradient .container .box:nth-child(1):before,
+.cardGradient .container .box:nth-child(1):after,
+.cardGradient .container .boxReverse:nth-child(1):before,
+.cardGradient .container .boxReverse:nth-child(1):after {
+    background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.cardGradient .container .box:nth-child(2):before,
+.cardGradient .container .box:nth-child(2):after,
+.cardGradient .container .boxReverse:nth-child(2):before,
+.cardGradient .container .boxReverse:nth-child(2):after {
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+
+.cardGradient .container .boxReverse::before,
+.cardGradient .container .boxReverse::after {
+    background: linear-gradient(315deg, #00ff59, #00d0ff);
+}
+
+.cardGradient .container .box span,
+.cardGradient .container .boxReverse span{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
+}
+
+.cardGradient .container .box span::before,
+.cardGradient .container .boxReverse span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.cardGradient .container .box:hover span::before,
+.cardGradient .container .boxReverse:hover span::before {
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+.cardGradient .container .box:hover span::before {
+    left: 50px;
+}
+
+.cardGradient .container .boxReverse:hover span::before {
+    left: 150px;
+}
+
+.cardGradient .container .box span::after,
+.cardGradient .container .boxReverse span::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    animation-delay: -1s;
+}
+
+.cardGradient .container .box span::after {
+    right: 0;
+}
+
+.cardGradient .container .boxReverse span::after{
+    left: 0;
+
+}
+
+.cardGradient .container .box:hover span::after,
+.cardGradient .container .boxReverse:hover span::after {
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+    bottom: -50px;
+}
+
+.cardGradient .container .box:hover span::after{
+    right: 50px;
+}
+
+.cardGradient .container .boxReverse:hover span::after{
+    left: 50px;
+}
+
+@keyframes animate {
+    0%, 100% {
+        transform: translateY(10px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+.cardGradient .container .box .content,
+.cardGradient .container .boxReverse .content {
+    z-index: 1;
+    position: relative;
+    left: 0;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    transition:a 0.5s;
+    color: #fff;
+}
+
+.cardGradient .container .box:hover .content,
+.cardGradient .container .boxReverse:hover .content {
+    left: -25px;
+    padding: 60px 40px;
+}
+
+.cardGradient .container .box .content h2,
+.cardGradient .container .boxReverse .content h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.cardGradient .container .box .content p,
+.cardGradient .container .boxReverse .content p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    line-height: 1.4em;
+}
+
+.cardGradient .container .box .content a,
+.cardGradient .container .boxReverse .content a {
+    display: inline-block;
+    font-size: 1.1em;
+    color: #111;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 5px;;
+}
