@@ -1,0 +1,144 @@
+.dropdownMenu {
+    background: linear-gradient(45deg, #4e65ff, #92effd);
+    padding: 3em;
+    position: relative;
+}
+
+.titleDropdown {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.navigationDropdown {
+    position: absolute;         /* fixed if we want menu follow scroll position */
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    transition: height 0.5s, width 0.5s;
+    transition-delay: 0s, 0.75s;
+    overflow: hidden;
+}
+
+.navigationDropdown.active {
+    width: 300px;
+    height: 400px;
+    transition: width 0.5s, height 0.5s;
+    transition-delay: 0s, 0.75s;
+    z-index: 10;
+}
+
+.navigationDropdown .userBx {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.navigationDropdown.active .userBx {
+    width: calc(100% - 60px);       /* 100% width without width of dropdown bar size */
+    transition-delay: 0s;
+}
+
+.navigationDropdown .userBx .usernameDropdown {
+    white-space: nowrap;
+    color: #555;
+    font-size: 1.1em;
+}
+
+.navigationDropdown .userBx .imgBx {
+    position: relative;
+    min-width: 60px;
+    height: 60px;
+    background: #000;
+    border-radius: 50%;
+    border: 10px solid #fff;
+    overflow: hidden;
+}
+
+.navigationDropdown .userBx .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.navigationDropdown .menuToggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navigationDropdown .menuToggle::before,
+.navigationDropdown .menuToggle::after {
+    content: " ";
+    position: absolute;
+    width: 32px;
+    height: 2px;
+    background-color: #555;
+    transition: 0.5s;
+}
+.navigationDropdown .menuToggle::before {
+    transform: translateY(-10px);
+    box-shadow: 0 10px #555;
+}
+
+.navigationDropdown .menuToggle::after {
+    transform: translateY(10px);
+}
+
+.navigationDropdown.active .menuToggle::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 #555;
+}
+
+.navigationDropdown.active .menuToggle::after {
+    transform: translateY(0px) rotate(-45deg);
+}
+
+.menuDrop {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px); /* substract height of header with image */
+    margin-top: 60px;
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menuDrop li {
+    list-style: none;
+}
+
+.menuDrop li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1em;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #555;
+}
+
+.menuDrop li a:hover {
+    color: #4e65ff
+}
+
+.menuDrop li a ion-icon {
+    font-size: 1.5em;
+}
