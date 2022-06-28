@@ -23,14 +23,15 @@
     text-transform: capitalize;
 }
 
-.artistMusic {
-    font-weight: 300;
+#progressBarControl, .artistMusic {
     font-size: 1.1em;
+    font-weight: 300;
+    text-transform: capitalize;
     color: #38a7ff;
     display: inline-flex;
     text-align: center;
     margin-bottom: 20px;
-    text-transform: capitalize;
+
 }
 
 .player{

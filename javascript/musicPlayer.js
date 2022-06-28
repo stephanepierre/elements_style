@@ -4,6 +4,7 @@ const prev = document.querySelector('.prev');
 const playpause = document.querySelector('.playpause');
 const next = document.querySelector('.next');
 const audio = document.querySelector('audio');
+let player = document.querySelector('#audioPlayer');
 
 //songs list
 
@@ -121,3 +122,28 @@ function nextSong() {
 }
 
 next.addEventListener('click', nextSong);
+
+
+function update(player) {
+
+    let duration = player.duration;    // Durée totale
+
+    let time     = player.currentTime; // Temps écoulé
+
+    if (time === duration) {
+        nextSong();
+    }
+
+    let fraction = time / duration;
+
+    let percent  = Math.ceil(fraction * 100);
+
+    let progress = document.querySelector('#progressBar');
+
+    if ( time > 0 ) {
+        progress.style.width = percent + '%';
+    
+        progress.textContent = percent + '%';
+    }
+
+}

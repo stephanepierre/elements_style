@@ -62,8 +62,11 @@
         <div class="music">
             <h2 class="titleMusic">Music name</h2>
             <h3 class="artistMusic">artist</h3>
+            <div id="progressBarControl">
+                <div id="progressBar">En attente</div>
+            </div>
             <div class="player">
-                <audio src=""></audio>
+                <audio src="" id="audioPlayer" ontimeupdate="update(this)"></audio>
                 <div class="btnsMusic">
                     <span class="prev"><ion-icon name="play-back-outline"></ion-icon></span>
                     <span class="playpause"><ion-icon name="play-outline"></ion-icon></span>
@@ -143,7 +146,7 @@
     </section>
 
     <section class="popUpSection">
-        <div class="container">
+        <div class="containerPop">
             <div class="content">
                 <h2>Bonjour la Pop-Up</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ab atque maiores provident voluptatum, porro hic accusamus amet est repudiandae veritatis iusto rem quasi. Maxime, unde eveniet. Quae, est optio.</p>
@@ -161,6 +164,5 @@
     <script src="/javascript/popUpSection.js"></script>
     <script src="/javascript/magicNav.js"></script>
     <script src="/javascript/musicPlayer.js"></script>
-    <script src="/javascript/cardGradient.js"></script>
 </body>
 </html>
